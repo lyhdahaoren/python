@@ -21,8 +21,6 @@ class qyRegister(Resource):
             mobile = requestData.get('mobile')
             mobiles = Qy_login.query.filter_by(mobile=mobile).first()
             if mobiles is None:
-                if mobiles.username == username:
-                    return jsonify({'code': '400015', 'msg': '该用户已存在，请登录', 'data': ''})
                 u = Qy_login(username=username, password=password, mobile=mobile)
                 db.session.add(u)
                 db.session.commit()
@@ -32,7 +30,7 @@ class qyRegister(Resource):
             # print("{} User add : {} failure...".format(time.strftime("%Y-%m-%d %H:%M:%S"),requestData['username']))
             print('failure')
             db.session.rollback()
-            return False
+            return {'code':401}
         else:
             # print("{} User add : {} success...".format(time.strftime("%Y-%m-%d %H:%M:%S"),requestData['username']))
             print('success')
