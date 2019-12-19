@@ -35,16 +35,16 @@ class Config:
 
 # 开发环境配置
 class DevelopmentConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:Nanxiaoxiaofeng123@rm-m5ef8m35xc42rvr1jto.mysql.rds.aliyuncs.com:3306/pindaidai'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:123456@localhost/weqwe'
 
 # 测试环境配置
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:Nanxiaoxiaofeng123@rm-m5ef8m35xc42rvr1jto.mysql.rds.aliyuncs.com:3306/pindaidai'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:123456@localhost/weqwe'
 
 
 # 生产环境
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:Nanxiaoxiaofeng123@rm-m5ef8m35xc42rvr1jto.mysql.rds.aliyuncs.com:3306/pindaidai'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:123456@localhost/weqwe'
 
 
 
